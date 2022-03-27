@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "envimation/ubuntu-xenial"
+  config.vm.box = "minimal/xenial64"
   config.vm.network "public_network", bridge: "Realtek PCIe GBE Family Controller"
   config.vm.synced_folder ".", "/vagrant_data", disabled: true
   config.vm.provider "hyperv"
@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
     h.memory = 2048
   end
   
-  config.vm.provision "ansible" do |a|
-    a.verbose = "v"
-    a.playbook = "playbook.yaml"
+  config.vm.provision "cent1" do |cent1|
+    cent1.vm.box = "minimal/centos7"
+    cent1.vm.hostname = 'cent1'
   end
 end
