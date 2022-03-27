@@ -13,9 +13,14 @@ Vagrant.configure("2") do |config|
     h.linked_clone = false
     h.memory = 2048
   end
+
+  config.vm.define 'ub1' do |ub1|
+    ub1.vm.hostname = 'ub1'
+  end
   
-  config.vm.provision "cent1" do |cent1|
-    cent1.vm.box = "minimal/centos7"
-    cent1.vm.hostname = 'cent1'
+  config.vm.define "fed1" do |fed1|
+    fed1.vm.box = "fedora/34-cloud-base"
+    fed1.vm.box_version = "34.20210423.0"
+    fed1.vm.hostname = 'fed1'
   end
 end

@@ -6,6 +6,12 @@ all:
     globihost:
       ansible_ssh_host: globihost.com
       ansible_ssh_user: ansible
+    ub1:
+      ansible_ssh_host: ub1.lan
+      ansible_ssh_user: vagrant
+    fed1:
+      ansible_ssh_host: fed1.lan
+      ansible_ssh_user: vagrant
   children:
     allservers:
       hosts:
