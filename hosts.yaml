@@ -15,5 +15,5 @@ all:
   children:
     allservers:
       hosts:
-        ubuntusrv:
-        centsrv:
+#        ubuntusrv:
+#        centsrv:
