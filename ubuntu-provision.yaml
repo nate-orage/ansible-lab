@@ -1,4 +1,4 @@
-- name: Apt Update, Upgrade, and Install Cockpit, fail2ban, and 
+- name: Apt Update, Upgrade, and Install Cockpit and fail2ban.
   hosts: ub1
   become: yes
   gather_facts: False
