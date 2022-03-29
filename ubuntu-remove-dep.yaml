@@ -1,0 +1,8 @@
+- name: Remove dependencies that are no longer required
+  hosts: ub1, core
+  become: yes
+  gather_facts: False
+  tasks:
+    - name: Remove dependencies
+      apt:
+        autoremove: yes
