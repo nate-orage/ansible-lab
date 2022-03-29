@@ -6,3 +6,4 @@
     - name: Remove dependencies
       apt:
         autoremove: yes
+        autoclean: yes
