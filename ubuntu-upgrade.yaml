@@ -1,5 +1,5 @@
 - name: Update cache, upgrade packages and reboot os if necessary
-  hosts: core
+  hosts: core, ub1
   become: yes
   gather_facts: False
   tasks:

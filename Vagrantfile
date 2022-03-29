@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "minimal/xenial64"
+  config.vm.box = "ubuntu/focal64"
   config.vm.synced_folder ".", "/vagrant_data", disabled: true
   config.vm.provider "hyperv"
 
@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
   config.vm.define 'ub1' do |ub1|
     ub1.vm.hostname = 'ub1'
     ub1.vm.network 'public_network', bridge: "Realtek PCIe GBE Family Controller", ip: "192.168.1.206"
+    ub1.vm.provision 'shell',
+      inline: "sudo apt update && sudo apt upgrade -y && sudo apt install -t focal-backports cockpit fail2ban -y"
   end
   
   config.vm.define "fed1" do |fed1|
