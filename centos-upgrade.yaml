@@ -1,5 +1,5 @@
 - name: Upgrade and Reboot RHEL Linux distros
-  hosts: globihost
+  hosts: fed1
   become: yes
   become_user: root
   gather_facts: False
