@@ -1,5 +1,6 @@
 - name: Update cache, upgrade packages and reboot os if necessary
-  hosts: core, ub1
+  #Enable ub1 in hosts when virtualbox is up
+  hosts: core
   become: yes
   gather_facts: False
   tasks:
